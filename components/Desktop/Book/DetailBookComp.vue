@@ -1,54 +1,59 @@
 <template>
-<div style="padding-top: 55px">
-    <!-- Navigation Bar -->
-    <div class="bg-white fixed top-0 left-0 w-full flex items-center py-3 px-3" style="z-index: 1000">
-        <div class="flex items-center font-bold" @click="$router.go(-1)">
-            <SolidChevronLeftIcon class="w-8 mr-1.5 text-blue-lochmara" /> Book Detail
-        </div>
-    </div>
+<div style="padding-top: 3.5%; padding-bottom: 4%; background-color: #403E3E">
     <!-- Content -->
-    <div v-if="book != null" style="padding-bottom: 77px">
-        <!-- Cover Book -->
-        <div class="bg-dark">
-            <div style="position: relative; width: 100%; padding-top: 100%;">
-                <div class="flex justify-center items-center" style="position: absolute; top: 0; left: 0; bottom: 0; right: 0">
-                    <img :src="backendStorageHosts.bookManagement.books + book.cover" style="max-height: 100%; max-width: 100%">
+    <div v-if="book != null" class="grid grid-cols-4">
+        <div>
+            <!-- Cover Book -->
+            <div class="flex justify-center items-center">
+                <img :src="backendStorageHosts.bookManagement.books + book.cover" class="h-full">
+            </div>
+        </div>
+
+        <div class="col-span-2 px-3">
+            <!-- Title, Author, and Price -->
+            <div class="py-3 px-3.5" style="border-radius: 8px; background-color: #EDEAE2;">
+                <div class="font-bold" style="font-size: 24px">{{toTitleCase(book.title)}}</div>
+                <div class="mb-8" style="font-size: 15px; color: #94898D">by {{book.author}}</div>
+                <!-- </div> -->
+                <!-- Product Detail -->
+                <!-- <div class="mt-3 py-3 px-3.5" style="border-radius: 8px; background-color: #EDEAE2;"> -->
+                <div class="mb-1 font-bold">Product Detail</div>
+                <!-- Publisher, Stock, Weight -->
+                <div class="mb-6" style="font-size: 14px">
+                    <div class="flex mb-1">
+                        <div class="w-1/5">Publisher</div>
+                        <div class="w-4/5 pl-1">: {{book.publisher}}</div>
+                    </div>
+                    <div class="flex mb-1" style="font-size: 14px">
+                        <div class="w-1/5">Stock</div>
+                        <div class="w-4/5 pl-1">: {{book.stock}}</div>
+                    </div>
+                    <div class="flex mb-1" style="font-size: 14px">
+                        <div class="w-1/5">Weight</div>
+                        <div class="w-4/5 pl-1">: {{book.weight}} kg</div>
+                    </div>
+                </div>
+                <!-- Description -->
+                <div class="text-justify" style="font-size: 14px">
+                    &nbsp;&nbsp;&nbsp; {{book.description}}
                 </div>
             </div>
         </div>
-        <!-- Title, Author, and Price -->
-        <div class="bg-white py-3 px-3.5">
-            <div class="font-bold" style="font-size: 17px">{{toTitleCase(book.title)}}</div>
-            <div class="text-grey-600 mb-4" style="font-size: 15px">by {{book.author}}</div>
-            <div class="font-bold" style="font-size: 20px">Rp. {{setRupiah(book.price).replace('..00', '')}}</div>
-        </div>
-        <!-- Product Detail -->
-        <div class="mt-3 bg-white py-3 px-3.5">
-            <div class="mb-3 font-bold">Product Detail</div>
-            <!-- Publisher, Stock, Weight -->
-            <div class="mb-3" style="font-size: 14px">
-                <div class="flex mb-1">
-                    <div class="text-grey-600 w-1/5">Publisher</div>
-                    <div class="w-4/5 pl-4">{{book.publisher}}</div>
-                </div>
-                <div class="flex mb-1" style="font-size: 14px">
-                    <div class="text-grey-600 w-1/5">Stock</div>
-                    <div class="w-4/5 pl-4">{{book.stock}}</div>
-                </div>
-                <div class="flex mb-1" style="font-size: 14px">
-                    <div class="text-grey-600 w-1/5">Weight</div>
-                    <div class="w-4/5 pl-4">{{book.weight}} kg</div>
+
+        <div class="px-3">
+            <!-- Button to Cart -->
+            <div class="w-full p-3" style="background-color: #787D84; border-radius: 8px;">
+                <div class="flex items-center justify-center py-2 pr-7 fontbold rounded-lg" style="color: #EDEAE2">
+                    <SolidShoppingCartIcon class="w-6 mr-3"/> Rp. {{setRupiah(book.price).replace('..00', '')}}
                 </div>
             </div>
-            <!-- Description -->
-            <div class="text-justify" style="font-size: 14px">
-                {{book.description}}
-            </div>
-        </div>
-        <!-- Button to Cart -->
-        <div class="bg-white w-full p-3 fixed bottom-0 left-0">
-            <div class="bg-blue-lochmara flex items-center justify-center py-2 pr-7 text-white fontbold rounded-lg">
-                <SolidShoppingCartIcon class="w-6 mr-3"/> Cart
+            <div>
+                <div class="grid grid-rows-4 px-3">
+                    <div v-for="(top4, index) in top4s" :key="index">
+                        <!-- Book Card -->
+                        <book-card-helper :book="top4" :index="index" />
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -60,10 +65,12 @@ import {
     backendStorageHosts,
 } from '../../../app.config'
 import InfiniteLoading from 'vue-infinite-loading'
+import BookCardHelper from '../helper/BookCardHelper.vue'
 
 export default {
     components: {
         InfiniteLoading,
+        BookCardHelper
     },
 
     data() {
@@ -75,7 +82,8 @@ export default {
     },
 
     created() {
-        this.getBookDetail()
+        this.getBookDetail(),
+        this.getTop4()
     },
 
     methods: {
@@ -103,6 +111,12 @@ export default {
                 if (i % 3 == 0) rupiah += angkarev.substr(i, 3) + '.';
                 return rupiah.split('', rupiah.length - 1).reverse().join('');
             }
+        },
+        getTop4() {
+            this.$bookManagementApi.get('v1/books/top/4')
+            .then(resp => {
+                this.top4s = resp.data.data
+            })
         },
     }
 }

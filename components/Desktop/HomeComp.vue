@@ -104,7 +104,7 @@ export default {
         },
         goCategoriesDetail(category_slug) {
             this.$router.push({
-                name: 'category-slug',
+                name: 'category-desktop',
                 params: {
                     slug: category_slug
                 }
