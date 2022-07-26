@@ -43,12 +43,14 @@
         <div class="px-3">
             <!-- Button to Cart -->
             <div class="w-full p-3" style="background-color: #787D84; border-radius: 8px;">
-                <div class="flex items-center justify-center py-2 pr-7 fontbold rounded-lg" style="color: #EDEAE2">
+                <div class="flex items-center justify-center py-2 fontbold rounded-lg" style="color: #EDEAE2">
                     <SolidShoppingCartIcon class="w-6 mr-3"/> Rp. {{setRupiah(book.price).replace('..00', '')}}
                 </div>
             </div>
-            <div>
-                <div class="grid grid-rows-4 px-3">
+            <div class="mt-8 font-semibold" style="font-size:18px; color: #EDEAE2">
+                Rekomendasi buku lain
+                <hr>
+                <div class="grid grid-rows-4 px-3 pt-5">
                     <div v-for="(top4, index) in top4s" :key="index">
                         <!-- Book Card -->
                         <book-card-helper :book="top4" :index="index" />
@@ -65,7 +67,7 @@ import {
     backendStorageHosts,
 } from '../../../app.config'
 import InfiniteLoading from 'vue-infinite-loading'
-import BookCardHelper from '../helper/BookCardHelper.vue'
+import BookCardHelper from '../helper/BookCardHelper'
 
 export default {
     components: {

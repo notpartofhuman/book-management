@@ -1,9 +1,9 @@
 <template>
-<div style="background-color: #403E3E">
+<div style="background-color: #EDEAE2">
     <!-- Kategori -->
     <div class="pt-6 mb-4">
         <!-- Title -->
-        <div class="flex mb-1" style="color: #EDEAE2">
+        <div class="flex mb-1" style="color: #403E3E">
             <div class="font-semibold pl-4" style="font-size: 16px;">
             Categories
             </div>
@@ -26,7 +26,7 @@
                 <div class="absolute top-0 left-0"
                     style="background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(67, 67, 67,
                     0.5) 56.27%, rgba(0, 0, 0, 0.52) 76.51%, rgba(0, 0, 0, 0.67) 100%); height: 100%; width: 100%">
-                    <div class="absolute bottom-0 left-0 whitespace-normal text-white pl-3 pb-2 fontsemibold">
+                    <div class="absolute bottom-0 left-0 whitespace-normal pl-3 pb-2 fontsemibold">
                         {{toTitleCase(categori.name)}}
                     </div>
                 </div>
@@ -35,7 +35,7 @@
     </div>
 
     <!-- Books -->
-    <div style="color: #EDEAE2">
+    <div style="color: #403E3E">
         <div class="flex mb-1">
             <div class="font-semibold pl-4" style="font-size: 16px">
                 Top 4
@@ -104,7 +104,7 @@ export default {
         },
         goCategoriesDetail(category_slug) {
             this.$router.push({
-                name: 'category-desktop',
+                name: 'category-slug',
                 params: {
                     slug: category_slug
                 }

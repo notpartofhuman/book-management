@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="shadow-xl">
     <!-- Navigation Bar -->
     <div class="fixed top-0 left-0 w-full flex items-center py-3 px-3"
         style="box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25); background-color: #EDEAE2; z-index: 1000; color: #403E3E;">

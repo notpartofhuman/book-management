@@ -1,23 +1,26 @@
 <template>
-<div>
+<div style="background-color: #EDEAE2">
     <client-only>
-        <div style="background: #F6F6F6">
-            <div v-if="$device.isMobileOrTablet" style="padding-top: 55px">
-                <!-- Navigation Bar -->
-                <div class="bg-white fixed top-0 left-0 w-full flex items-center py-3 px-3" style="z-index: 1000">
-                    <div class="flex items-center font-bold" @click="$router.go(-1)">
-                        <SolidChevronLeftIcon class="w-8 mr-1.5 text-blue-lochmara" /> Category Detail
-                    </div>
+        <div v-if="$device.isDesktop">
+            <!-- Navigation Bar -->
+            <div class="fixed top-0 left-0 w-full flex items-center py-3 px-3 shadow-xl" style="z-index: 1000; background-color: #EDEAE2; color: #403E3E">
+                <div class="flex items-center font-bold" @click="$router.go(-1)">
+                    <SolidChevronLeftIcon class="w-8 mr-1.5 text-blue-lochmara" /> Category Detail
                 </div>
-                <!-- Content -->
-                <MobileCategoryDetailCategoryComp />
             </div>
+            <!-- Content -->
+            <DesktopCategoryDetailCategoryComp />
         </div>
      </client-only>
 </div>
 </template>
 
 <script>
+import {
+    frontendHost,
+    backendStorageHosts
+} from '../../app.config'
+
 export default {
 data() {
     return {
@@ -29,6 +32,8 @@ data() {
         },
         slug: this.$route.params.slug,
         hostname: frontendHost,
+        // backendStorageHosts: backendStorageHosts,
+        // slug: this.$route.params.slug
     }
 },
 

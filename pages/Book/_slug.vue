@@ -1,20 +1,19 @@
 <template>
 <div style="background-color: #403E3E;">
     <client-only>
-            <div v-if="$device.isDesktop" style="padding-top: 55px">
-                <!-- Navigation Bar -->
-                <div class="fixed top-0 left-0 w-full flex items-center py-3 px-3" style="z-index: 1000; background-color: #EDEAE2">
-                    <div class="flex items-center font-bold" @click="$router.go(-1)">
-                        <SolidChevronLeftIcon class="w-8 mr-1.5 text-blue-lochmara" /> Book Detail
-                    </div>
+        <div v-if="$device.isDesktop" style="padding-top: 55px">
+            <!-- Navigation Bar -->
+            <div class="fixed top-0 left-0 w-full flex items-center py-3 px-3" style="z-index: 1000; background-color: #EDEAE2">
+                <div class="flex items-center font-bold" @click="$router.go(-1)">
+                    <SolidChevronLeftIcon class="w-8 mr-1.5 text-blue-lochmara" /> Book Detail
                 </div>
-                <!-- Content -->
-                <DesktopBookDetailBookComp />
             </div>
+            <!-- Content -->
+            <DesktopBookDetailBookComp />
+        </div>
      </client-only>
 </div>
 </template>
-
 
 <script>
 import {
@@ -60,7 +59,7 @@ export default {
     data() {
         return {
             seo: {
-                name: 'book Management',
+                name: 'Book Management',
                 description: '',
                 image: '',
                 url: 'http://50.50.50.207:3000/favicon.png'

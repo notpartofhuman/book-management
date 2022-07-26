@@ -1,21 +1,19 @@
 <template>
 <div @click="goDetailBook(book.slug)" class="rounded-lg overflow-hidden mb-3"
-    :class="index % 5 == 0 ? 'mr-1.5' : 'ml-1.5'" style="background-color: #403E3E">
-    <div class="bg-dark">
-        <div style="position: relative; width: 100%; padding-top: 100%;">
-            <div class="flex justify-center items-center"
-                style="position: absolute; top: 0; left: 0; bottom: 0; right: 0">
-                <img :src="backendStorageHosts.bookManagement.books + book.cover"
-                    style="max-height: 100%;">
-            </div>
+    :class="index % 5 == 0 ? 'mr-1.5' : 'ml-1.5'" style="background-color: #EDEAE2">
+    <div style="position: relative; width: 100%; padding-top: 100%;">
+        <div class="flex justify-center items-center"
+            style="position: absolute; top: 0; left: 0; bottom: 0; right: 0">
+            <img :src="backendStorageHosts.bookManagement.books + book.cover"
+                style="max-height: 100%;">
         </div>
     </div>
     <div class="px-2 py-2 mb-6">
         <p class="mb-2 text-multiline-ellipsis"
-            style="font-size: 13px; line-height: 1.4; height: 38px; text-align: center; color: #EDEAE2;">
+            style="font-size: 13px; line-height: 1.4; height: 38px; text-align: center; color: #403E3E;">
             {{book.title}}
         </p>
-        <div class="font-bold" style="font-size: 15px; text-align: center; color: #EDEAE2;">
+        <div class="font-bold" style="font-size: 15px; text-align: center; color: #403E3E;">
             <span style="font-size: 13px;">IDR</span> {{setRupiah(book.price).replace('..00', '')}}
         </div>
     </div>
