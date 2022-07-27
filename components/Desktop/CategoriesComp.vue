@@ -1,6 +1,6 @@
 <template>
 <div>
-    <div class="grid grid-cols-4 px-3 pt-3">
+    <div class="grid grid-cols-4 px-3 pt-5 ">
         <div v-for="(categori, index) in categories" :key="index" @click="goCategoriesDetail(categori.slug)"
             class="relative overflow-hidden rounded-lg mb-3" :class="index % 4 == 0 ? 'mr-1.5' : 'ml-1.5'">
             <img class="w-full" :src="backendStorageHosts.bookManagement.categories + categori.image" style="height: 275px">

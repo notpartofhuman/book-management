@@ -1,6 +1,6 @@
 <template>
 <div>
-    <div class="grid grid-cols-5 px-3 pt-3">
+    <div class="grid grid-cols-5 px-3 pt-5">
         <div v-for="(book, index) in books" :key="index" class="relative overflow-hidden rounded-lg">
             <book-card-helper :book="book" :index="index"/>
         </div>

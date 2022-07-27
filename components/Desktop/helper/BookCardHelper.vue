@@ -1,19 +1,19 @@
 <template>
-<div @click="goDetailBook(book.slug)" class="rounded-lg overflow-hidden mb-3"
-    :class="index % 5 == 0 ? 'mr-1.5' : 'ml-1.5'" style="background-color: #EDEAE2">
-    <div style="position: relative; width: 100%; padding-top: 100%;">
-        <div class="flex justify-center items-center"
-            style="position: absolute; top: 0; left: 0; bottom: 0; right: 0">
+<div @click="goDetailBook(book.slug)" class="rounded-lg overflow-hidden mb-3 shadow-md"
+    :class="index % 5 == 0 ? 'mr-1.5' : 'ml-1.5'" style="background-color: #F6FAF8">
+    <!-- style="background-color: " -->
+    <div class="relative px-4 w-full">
+        <div class="flex justify-center items-center">
             <img :src="backendStorageHosts.bookManagement.books + book.cover"
                 style="max-height: 100%;">
         </div>
     </div>
-    <div class="px-2 py-2 mb-6">
-        <p class="mb-2 text-multiline-ellipsis"
-            style="font-size: 13px; line-height: 1.4; height: 38px; text-align: center; color: #403E3E;">
+    <div class="px-1 py-1 mb-4">
+        <p class="mb-2 mt-1 truncate"
+            style="font-size: 13px; line-height: 1.4; height: 20px; text-align: center">
             {{book.title}}
         </p>
-        <div class="font-bold" style="font-size: 15px; text-align: center; color: #403E3E;">
+        <div class="font-bold" style="font-size: 15px; text-align: center">
             <span style="font-size: 13px;">IDR</span> {{setRupiah(book.price).replace('..00', '')}}
         </div>
     </div>
@@ -50,7 +50,7 @@ export default {
                 name: 'book-slug',
                 params: {
                     slug: bookSlug
-                }
+                },
             })
         },
     }

@@ -1,9 +1,9 @@
 <template>
-<div style="background-color: #EDEAE2">
+<div style="background-color: #F6FAF8">
     <!-- Kategori -->
     <div class="pt-6 mb-4">
         <!-- Title -->
-        <div class="flex mb-1" style="color: #403E3E">
+        <div class="flex mb-1">
             <div class="font-semibold pl-4" style="font-size: 16px;">
             Categories
             </div>
@@ -35,10 +35,10 @@
     </div>
 
     <!-- Books -->
-    <div style="color: #403E3E">
+    <div>
         <div class="flex mb-1">
             <div class="font-semibold pl-4" style="font-size: 16px">
-                Top 4
+                Top 5
             </div>
             <div class="ml-auto mt-auto" style="font-size: 14px">
                 <nuxt-link to="/DesktopBooks">
@@ -49,7 +49,7 @@
                 </nuxt-link>
             </div>
         </div>
-        <div class="grid grid-cols-4 px-3">
+        <div class="grid grid-cols-5 px-3">
             <div v-for="(top4, index) in top4s" :key="index">
                 <!-- Book Card -->
                 <book-card-helper :book="top4" :index="index" />
@@ -86,7 +86,7 @@ export default {
         },
 
         getTop4() {
-            this.$bookManagementApi.get('v1/books/top/4')
+            this.$bookManagementApi.get('v1/books/top/5')
             .then(resp => {
                 this.top4s = resp.data.data
             })
