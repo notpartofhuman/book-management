@@ -1,8 +1,7 @@
 <template>
 <div>
     <!-- Navigation Bar -->
-    <div class="fixed top-0 left-0 w-full flex items-center py-3 px-3 shadow-md"
-        style="background-color: #F6FAF8; z-index: 1000;">
+    <div class="fixed top-0 left-0 w-full flex items-center py-3 px-3" id="change">
 
         <!-- Buttom show menu -->
         <!-- <div class="px-1 mr-2" @click="showMenu()"> -->
@@ -54,7 +53,27 @@ export default {
                 this.isShowMenu = true
             }
         }
-    }
+    },
+    mounted() {
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                document.getElementById("change").style.background = "#F6FAF8";
+                document.getElementById("change").style.boxShadow = "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)";
+            } else {
+                document.getElementById("change").style.background = "transparent";
+                document.getElementById("change").style.boxShadow = "none";
+            }
+        }
+    },
 }
 
 </script>
+
+<style scoped>
+#change {
+    z-index: 1000;
+    transition: 0.4s; /* Add a transition effect (when scrolling - and font size is decreased) */
+}
+</style>

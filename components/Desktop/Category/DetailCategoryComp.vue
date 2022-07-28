@@ -31,7 +31,7 @@
     
     <div class="relative xs:py-8 xs:px-8 lg:pt-20 lg:px-16 lg:w-1/2 xs:w-full h-full overflow-y-scroll markdown-body post-right custom-scroll">
         <h3 class="mb-4 font-bold text-4xl">
-            Daftar buku
+            Book Lists
         </h3>
             <!-- <div class="grid grid-cols-3 px-3 pt-2"> -->
                 <!-- <div v-for="(book, index) in books" :key="index" class="relative overflow-hidden rounded-lg"> -->
