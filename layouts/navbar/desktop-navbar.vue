@@ -10,7 +10,7 @@
 
         <!-- Logo -->
         <img class="w-10" src="/favicon.png" />
-        <div class="ml-2 font-semibold text-xl">Book Management</div>
+        <div class="ml-2 font-semibold text-xl">Autumn Athenaeum</div>
 
         <!-- Menu -->
         <div class="ml-auto pr-1 inline-flex items-center">

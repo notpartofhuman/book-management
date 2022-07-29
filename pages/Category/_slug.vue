@@ -31,7 +31,7 @@ export default {
 data() {
     return {
         seo: {
-            name: 'Book Management',
+            name: 'Autumn Athenaeum',
             description: '',
             image: '',
             url: 'http://50.50.50.207:3000/favicon.png'
