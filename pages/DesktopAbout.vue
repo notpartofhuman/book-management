@@ -1,7 +1,10 @@
 <template>
 <div>
-    <!-- Navigation Bar -->
-    <div class="fixed top-0 left-0 w-full flex items-center py-3 px-3" id="change" style="color:orangered">
+    <client-only>
+        <div style="background: #F6FAF8">
+            <div v-if="$device.isDesktop">
+                <!-- Navigation Bar -->
+<div class="fixed top-0 left-0 w-full flex items-center py-3 px-3" id="change" style="color:orangered; z-index: 1000">
 
         <!-- Buttom show menu -->
         <!-- <div class="px-1 mr-2" @click="showMenu()"> -->
@@ -11,8 +14,8 @@
         <!-- Logo -->
         <NuxtLink to="/">
             <div class="inline-flex">
-                <img class="w-10" src="/favicon.png" />
-                <div class="ml-2 font-semibold text-2xl">Autumn Athenaeum</div>
+            <img class="w-10" src="/favicon.png" />
+            <div class="ml-2 font-semibold text-2xl">Autumn Athenaeum</div>
             </div>
         </NuxtLink>
 
@@ -23,42 +26,17 @@
             <NuxtLink to="/DesktopBooks" class="mx-5"> Books </NuxtLink>
             <SolidUserCircleIcon class="w-10 ml-5" />
         </div>
-    </div>
-
-    <!-- Pop Up Menu -->
-    <!-- <div class="fixed top-0 left-0 w-full bg-white" style="min-height: 100vh" -->
-    <!-- v-if="isShowMenu == true"> -->
-
-    <!-- Judul -->
-        <!-- <div class="flex items-center w-full py-3 pl-4 pr-2"> -->
-            <!-- <div class="font-bold" style="font-size: 16px; letter-spacing: 0.5px">Menu</div> -->
-
-            <!-- Button Close Menu --> 
-            <!-- <div class="ml-auto" @click="showMenu()"> -->
-            <!-- <OutlineXIcon class="w-7" /> -->
-            <!-- </div> -->
-        <!-- </div> -->
-    <!-- </div> -->
+                </div>
+                <!-- Content -->
+                <DesktopAboutComp />
+            </div>
+        </div>
+    </client-only>
 </div>
 </template>
 
 <script>
 export default {
-    data() {
-        return {
-            isShowMenu: false
-        }
-    },
-
-    methods: {
-        showMenu() {
-            if (this.isShowMenu) {
-                this.isShowMenu = false
-            } else {
-                this.isShowMenu = true
-            }
-        }
-    },
     mounted() {
         window.onscroll = function() {scrollFunction()};
 
@@ -75,12 +53,4 @@ export default {
         }
     },
 }
-
 </script>
-
-<style scoped>
-#change {
-    z-index: 1000;
-    transition: 0.4s; /* Add a transition effect (when scrolling - and font size is decreased) */
-}
-</style>

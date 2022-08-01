@@ -43,7 +43,7 @@
                 </div>
             </div>
             <!-- Button to Cart -->
-            <div class="w-full p-3 mt-10 shadow-md" style="background-color: #4B83C6; border-radius: 8px;">
+            <div class="w-full p-3 mt-10 shadow-md" style="background-color: orangered; border-radius: 8px;">
                 <div class="flex items-center justify-center py-2 fontbold rounded-lg" style="color: #EDEAE2">
                     <SolidShoppingCartIcon class="w-6 mr-3"/> Rp. {{setRupiah(book.price).replace('..00', '')}}
                 </div>

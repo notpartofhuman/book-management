@@ -1,6 +1,6 @@
 <template>
-<div @click="goDetailBook(book.slug)" class="rounded-lg overflow-hidden mb-3 shadow-md"
-    :class="index % 5 == 0 ? 'mr-1.5' : 'ml-1.5'" style="background-color: #F6FAF8">
+<div @click="goDetailBook(book.slug)" class="rounded-lg overflow-hidden mb-3 shadow-md gradient"
+    :class="index % 5 == 0 ? 'mr-1.5' : 'ml-1.5'">
     <!-- style="background-color: " -->
     <div class="relative px-4 w-full">
         <div class="flex justify-center items-center">
@@ -65,5 +65,11 @@ export default {
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     white-space: normal;
+}
+.gradient {
+    background: linear-gradient(
+        to bottom right,
+        rgba(255, 69, 0, 0), rgba(255, 69, 0, 0.2)
+    );
 }
 </style>
