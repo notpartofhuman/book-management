@@ -12,14 +12,14 @@
         <div class="col-span-2 mr-5 mt-5">
             <!-- Title, Author, and Price -->
             <div class="py-3 px-3.5 rounded-lg shadow-lg" style="background-color: #F6FAF8;">
-                <div class="font-bold" style="font-size: 24px">{{toTitleCase(book.title)}}</div>
+                <div class="font-bold" style="font-size: 24px; color: #27211e">{{toTitleCase(book.title)}}</div>
                 <div class="mb-8" style="font-size: 15px; color: #94898D">by {{book.author}}</div>
                 <!-- </div> -->
                 <!-- Product Detail -->
                 <!-- <div class="mt-3 py-3 px-3.5" style="border-radius: 8px; background-color: #EDEAE2;"> -->
-                <div class="mb-1 font-bold">Product Detail</div>
+                <div class="mb-1 font-bold" style="color: #27211e">Product Detail</div>
                 <!-- Publisher, Stock, Weight -->
-                <div class="mb-6" style="font-size: 14px">
+                <div class="mb-6" style="font-size: 14px; color: #27211e">
                     <div class="flex mb-1">
                         <div class="w-1/6">Publisher</div>
                         <div class="w-5/6 pl-1">: {{toTitleCase(book.publisher)}}</div>
@@ -38,24 +38,24 @@
                     </div>                                  
                 </div>
                 <!-- Description -->
-                <div class="text-justify" style="font-size: 14px">
+                <div class="text-justify" style="font-size: 14px; color: #27211e">
                     &nbsp;&nbsp;&nbsp; {{book.description}}
                 </div>
             </div>
             <!-- Button to Cart -->
             <div class="w-full p-3 mt-10 shadow-md" style="background-color: orangered; border-radius: 8px;">
-                <div class="flex items-center justify-center py-2 fontbold rounded-lg" style="color: #EDEAE2">
+                <div class="flex items-center justify-center py-2 rounded-lg" style="color: #EDEAE2">
                     <SolidShoppingCartIcon class="w-6 mr-3"/> Rp. {{setRupiah(book.price).replace('..00', '')}}
                 </div>
             </div>
             <div>
-            <div class="mt-8 font-semibold" style="font-size:18px">
-                Rekomendasi buku lain
+            <div class="mt-8 font-semibold" style="font-size:18px; color: #27211e">
+                Recommendation
                 <hr>
                 <div class="grid grid-cols-5 px-3 pt-5">
-                    <div v-for="(top4, index) in top4s" :key="index">
+                    <div v-for="(top4s, index) in top4s" :key="index">
                         <!-- Book Card -->
-                        <book-card-helper :book="top4" :index="index" />
+                        <book-card-helper :book="top4s" :index="index" />
                     </div>
                 </div>
             </div>
@@ -90,7 +90,7 @@ export default {
 
     created() {
         this.getBookDetail(),
-        this.getTop4()
+        this.getTop4s()
     },
 
     methods: {
@@ -119,7 +119,7 @@ export default {
                 return rupiah.split('', rupiah.length - 1).reverse().join('');
             }
         },
-        getTop4() {
+        getTop4s() {
             this.$bookManagementApi.get('v1/books/top/5')
             .then(resp => {
                 this.top4s = resp.data.data

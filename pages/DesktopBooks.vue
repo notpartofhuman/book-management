@@ -1,7 +1,7 @@
 <template>
 <div>
     <client-only>
-        <div style="background: #F6FAF8">
+        <div style="background: #F6FAF8; color: #27211e">
             <div v-if="$device.isDesktop" style="padding-top: 55px">
                 <!-- Navigation Bar -->
                 <div class="fixed top-0 left-0 w-full flex items-center py-3 px-3 shadow-md" style="z-index: 1000; background-color: #F6FAF8">
@@ -10,8 +10,9 @@
                     <p class="font-semibold text-xl inline-flex">&nbsp; All Books </p>
 
                     <div class="ml-auto pr-1 inline-flex items-center">
+                        <NuxtLink to="/DesktopAbout" class="mx-5"> About Us </NuxtLink>
                         <NuxtLink to="/DesktopCategories" class="mx-5"> Categories </NuxtLink>
-                        <NuxtLink to="/DesktopBooks" class="mx-5"> Books </NuxtLink>
+                        <NuxtLink to="/DesktopBooks" class="mx-5"> Books <hr></NuxtLink>
                         <SolidUserCircleIcon class="w-10 ml-5" />
                     </div>
                 </div>
@@ -22,3 +23,20 @@
     </client-only>
 </div>
 </template>
+
+<script>
+export default {
+    mounted() {
+        window.onscroll = null;
+    }
+}
+</script>
+
+<style scoped>
+a.nuxt-link-exact-active {
+  color: #FF4500;
+}
+a:hover {
+  color: #FF4500;
+}
+</style>

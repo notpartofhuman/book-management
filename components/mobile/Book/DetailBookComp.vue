@@ -1,5 +1,5 @@
 <template>
-<div style="padding-top: 55px">
+<div>
     <!-- Navigation Bar -->
     <div class="bg-white fixed top-0 left-0 w-full flex items-center py-3 px-3" style="z-index: 1000">
         <div class="flex items-center font-bold" @click="$router.go(-1)">
@@ -46,7 +46,7 @@
             </div>
         </div>
         <!-- Button to Cart -->
-        <div class="bg-white w-full p-3 fixed bottom-0 left-0">
+        <div class="w-full p-3 fixed bottom-0 left-0" style="background-color: #FF4500">
             <div class="bg-blue-lochmara flex items-center justify-center py-2 pr-7 text-white fontbold rounded-lg">
                 <SolidShoppingCartIcon class="w-6 mr-3"/> Cart
             </div>

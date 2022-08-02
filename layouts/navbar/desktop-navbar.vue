@@ -18,9 +18,9 @@
 
         <!-- Menu -->
         <div class="ml-auto pr-1 inline-flex items-center">
-            <NuxtLink to="/DesktopAbout" class="mx-5"> About Us </NuxtLink>
-            <NuxtLink to="/DesktopCategories" class="mx-5"> Categories </NuxtLink>
-            <NuxtLink to="/DesktopBooks" class="mx-5"> Books </NuxtLink>
+            <NuxtLink to="/DesktopAbout" class="mx-5 anav" id="about"> About Us </NuxtLink>
+            <NuxtLink to="/DesktopCategories" class="mx-5 anav" id="categories"> Categories </NuxtLink>
+            <NuxtLink to="/DesktopBooks" class="mx-5 anav" id="books"> Books </NuxtLink>
             <SolidUserCircleIcon class="w-10 ml-5" />
         </div>
     </div>
@@ -66,7 +66,7 @@ export default {
             if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
                 document.getElementById("change").style.background = "#F6FAF8";
                 document.getElementById("change").style.boxShadow = "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)";
-                document.getElementById("change").style.color = "black";
+                document.getElementById("change").style.color = "#27211e";
             } else {
                 document.getElementById("change").style.background = "transparent";
                 document.getElementById("change").style.boxShadow = "none";
@@ -82,5 +82,11 @@ export default {
 #change {
     z-index: 1000;
     transition: 0.4s; /* Add a transition effect (when scrolling - and font size is decreased) */
+}
+a.nuxt-link-exact-active {
+  color: #FF4500;
+}
+.anav:hover {
+  color: #FF4500;
 }
 </style>

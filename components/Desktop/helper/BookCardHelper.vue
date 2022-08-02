@@ -10,10 +10,10 @@
     </div>
     <div class="px-1 py-1 mb-4">
         <p class="mb-2 mt-1 truncate"
-            style="font-size: 13px; line-height: 1.4; height: 20px; text-align: center">
+            style="font-size: 13px; line-height: 1.4; height: 20px; text-align: center; color:#27211e">
             {{book.title}}
         </p>
-        <div class="font-bold" style="font-size: 15px; text-align: center">
+        <div class="font-bold" style="font-size: 15px; text-align: center; color: #FF4500">
             <span style="font-size: 13px;">IDR</span> {{setRupiah(book.price).replace('..00', '')}}
         </div>
     </div>

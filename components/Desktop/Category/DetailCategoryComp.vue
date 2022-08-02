@@ -18,19 +18,19 @@
         <img class="absolute h-full w-full object-cover" :src="backendStorageHosts.bookManagement.categories + category.image" alt="">
             <!-- Overlay Categori Name -->
             <div class="overlay"></div>
-            <div class="absolute top-20 ml-8 text-white">
+            <div class="absolute mt-24 ml-12" style="color: #F6FAF8">
                 <div class="mt-3 -mb-3 flex flex-col text-sm">
-                    <h1 class="text-4xl font-bold">
+                    <h1 class="text-5xl font-bold">
                     {{toTitleCase(category.name)}}
                     </h1>
-                    <p class="mb-4">{{toTitleCase(category.status)}}</p>
+                    <p class="mb-4 text-xl font-semibold">{{toTitleCase(category.status)}}</p>
                 </div>
             </div>
     </div>
 
     
     <div class="relative xs:py-8 xs:px-8 lg:pt-20 lg:px-16 lg:w-1/2 xs:w-full h-full overflow-y-scroll markdown-body post-right custom-scroll">
-        <h3 class="mb-4 font-bold text-4xl">
+        <h3 class="mb-4 font-bold text-4xl" style="color: #27211e">
             Book Lists
         </h3>
             <!-- <div class="grid grid-cols-3 px-3 pt-2"> -->
@@ -56,9 +56,9 @@
                         />
 
                         <div class="pt-5 pl-8 flex flex-col xxlmin:w-1/2 xxlmax:w-full">
-                            <p class="font-bold" style="font-size: 19px">{{ book.title }}</p>
+                            <p class="font-bold" style="font-size: 19px; color: #27211e">{{ book.title }}</p>
                             <p style="font-size: 15px; color: #94898D">by {{book.author}}</p>
-                            <p class="font-bold text-sm pt-8" style="font-size: 17px">
+                            <p class="font-bold text-sm pt-8" style="font-size: 17px; color: #27211e">
                             <span>IDR</span> {{setRupiah(book.price).replace('..00', '')}}
                             </p>
                         </div>

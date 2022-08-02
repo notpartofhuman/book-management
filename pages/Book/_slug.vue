@@ -3,20 +3,32 @@
     <client-only>
         <div v-if="$device.isDesktop" style="padding-top: 55px">
             <!-- Navigation Bar -->
-            <div class="fixed top-0 left-0 w-full flex items-center py-3 px-3 shadow-md" style="z-index: 1000; background-color: #F6FAF8">
+            <div class="fixed top-0 left-0 w-full flex items-center py-3 px-3 shadow-md" style="z-index: 1000; background-color: #F6FAF8; color: #27211e">
                 <!-- <div class="flex items-center font-bold" @click="$router.go(-1)"> -->
                 <NuxtLink to="/"> <SolidHomeIcon class="w-8 mb-2 inline-flex items-center"/></NuxtLink>
                     <p class="font-semibold text-xl inline-flex">&nbsp; Book Details </p>
 
                 <div class="ml-auto pr-1 inline-flex items-center">
+                    <NuxtLink to="/DesktopAbout" class="mx-5"> About Us </NuxtLink>
                     <NuxtLink to="/DesktopCategories" class="mx-5"> Categories </NuxtLink>
-                    <NuxtLink to="/DesktopBooks" class="mx-5"> Books </NuxtLink>
+                    <NuxtLink to="/DesktopBooks" class="mx-5" style="color: #FF4500"> Books <hr></NuxtLink>
                     <SolidUserCircleIcon class="w-10 ml-5" />
                 </div>
             </div>
             <!-- Content -->
             <DesktopBookDetailBookComp />
         </div>
+
+        <div v-else-if="$device.isMobileOrTablet">
+                <!-- Navigation Bar -->
+                <div class="bg-white fixed top-0 left-0 w-full flex items-center py-3 px-3" style="z-index: 1000">
+                    <div class="flex items-center font-bold" @click="$router.go(-1)">
+                        <SolidChevronLeftIcon class="w-8 mr-1.5 text-blue-lochmara" /> Book Detail
+                    </div>
+                </div>
+                <!-- Content -->
+                <MobileBookDetailBookComp />
+            </div>
      </client-only>
 </div>
 </template>
@@ -28,6 +40,9 @@ import {
 } from '../../app.config'
 
 export default {
+    mounted() {
+        window.onscroll = null;
+    },
     head() {
         return {
             title: this.seo.name,
@@ -87,3 +102,9 @@ export default {
     },
 }
 </script>
+
+<style scoped>
+a:hover {
+  color: #FF4500;
+}
+</style>

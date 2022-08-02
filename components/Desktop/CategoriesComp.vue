@@ -5,10 +5,8 @@
             class="relative overflow-hidden rounded-lg mb-3" :class="index % 4 == 0 ? 'mr-1.5' : 'ml-1.5'">
             <img class="w-full" :src="backendStorageHosts.bookManagement.categories + categori.image" style="height: 275px">
                 <!-- Overlay Categori Name -->
-                <div class="absolute top-0 left-0" style="background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%,
-                    rgba(67, 67, 67, 0.5) 56.27%, rgba(0, 0, 0, 0.52) 76.51%, rgba(0, 0, 0, 0.67) 100%);
-                    height: 100%; width: 100%">
-                    <div class="absolute bottom-0 left-0 whitespace-normal text-white pl-3 pb-2 font-semibold">
+                <div class="absolute top-0 left-0" style="height: 100%; width: 100%; color: #F6FAF8">
+                    <div class="absolute bottom-0 left-0 whitespace-normal pl-3 pb-2 font-semibold">
                         {{toTitleCase(categori.name)}}
                     </div>
                 </div>
