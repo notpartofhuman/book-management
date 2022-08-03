@@ -16,6 +16,10 @@
         <div spinner="waveDots">
         </div>
     </infinite-loading>
+
+    <div class="container" id="flavoursContainer">
+  This is a really long sentence to demo my code, it's just going on and on. Still going. I should have used some default placeholder text but I've started now so I'll keep going.
+</div>
 </div>
 </template>
 
@@ -71,6 +75,27 @@ export default {
                 }
             })
         },
+    },
+    mounted() {
+        const flavoursContainer = document.getElementById('flavoursContainer');
+        const flavoursScrollWidth = flavoursContainer.scrollWidth;
+
+        window.addEventListener('load', () => {
+            self.setInterval(() => {
+                if (flavoursContainer.scrollLeft !== flavoursScrollWidth) {
+                    flavoursContainer.scrollTo(flavoursContainer.scrollLeft + 1, 0);
+                }
+            }, 15);
+        });
     }
 }
 </script>
+
+<style scoped>
+.container {
+  width: 300px;
+  overflow-x: scroll;
+  white-space: nowrap;
+  background-color: #fff;
+}
+</style>
