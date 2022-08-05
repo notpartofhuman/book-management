@@ -9,6 +9,7 @@
 
 <script>
 export default {
-  layout: (ctx) => ctx.$device.isMobileOrTablet ? 'mobile-layout' : 'desktop-layout',
-}
+  layout: (ctx) =>
+    ctx.$device.isMobileOrTablet ? "mobile-layout" : "desktop-layout",
+};
 </script>
