@@ -1,39 +1,51 @@
 <template>
   <div>
-    <div class="grid grid-cols-4 px-3 pt-5">
-      <div
-        v-for="(categori, index) in categories"
-        :key="index"
-        @click="goCategoriesDetail(categori.slug)"
-        class="relative overflow-hidden rounded-lg mb-3"
-        :class="index % 4 == 0 ? 'mr-1.5' : 'ml-1.5'"
-      >
-        <img
-          class="w-full"
-          :src="backendStorageHosts.bookManagement.categories + categori.image"
-          style="height: 275px"
-        />
-        <!-- Overlay Categori Name -->
+    <div class="text-3xl font-semibold text-center mt-8">All Categories</div>
+    <div class="flex lg:h-screen w-screen lg:overflow-hidden xs:flex-col">
+      <div class="inline-flex">
         <div
-          class="absolute top-0 left-0"
-          style="height: 100%; width: 100%; color: #f6faf8"
+          v-for="(categori, index) in categories"
+          :key="index"
+          @click="goCategoriesDetail(categori.slug)"
+          class="relative lg:w-1/2 xs:w-full xs:h-84 lg:h-96 mt-20"
+          :class="index % 8 == 0 ? 'mr-0.5' : 'ml-0.5'"
         >
-          <div
-            class="absolute bottom-0 left-0 whitespace-normal pl-3 pb-2 font-semibold"
+          <img
+            class="h-full w-full object-cover"
+            :src="
+              backendStorageHosts.bookManagement.categories + categori.image
+            "
+          />
+          <!-- Overlay Categori Name -->
+          <!-- <div
+            class="absolute pt-48 pl-10"
+            style="
+              height: 100%;
+              width: 100%;
+              color: #f6faf8;
+              background-color: rgba(225, 69, 0, 0.3);
+            "
           >
-            {{ toTitleCase(categori.name) }}
+            <div class="absolute whitespace-normal font-semibold">
+              {{ toTitleCase(categori.name) }}
+            </div>
+          </div> -->
+
+          <div
+            class="absolute top-4 left-8"
+            style="color: #f6faf8; background-color: rgba(225, 69, 0, 0.3)"
+          >
+            <div class="mt-3 mb-3 flex flex-col text-sm">
+              <h1 class="text-xl font-bold">
+                {{ toTitleCase(categori.name) }}
+              </h1>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <infinite-loading @distance="1" @infinite="getCategories">
-      <div spinner="waveDots"></div>
-    </infinite-loading>
-
-    <div class="container" id="flavoursContainer">
-      This is a really long sentence to demo my code, it's just going on and on.
-      Still going. I should have used some default placeholder text but I've
-      started now so I'll keep going.
+      <infinite-loading @distance="1" @infinite="getCategories">
+        <div spinner="waveDots" slot="no-more"></div>
+      </infinite-loading>
     </div>
   </div>
 </template>
@@ -87,26 +99,8 @@ export default {
       });
     },
   },
-  mounted() {
-    const flavoursContainer = document.getElementById("flavoursContainer");
-    const flavoursScrollWidth = flavoursContainer.scrollWidth;
-
-    window.addEventListener("load", () => {
-      self.setInterval(() => {
-        if (flavoursContainer.scrollLeft !== flavoursScrollWidth) {
-          flavoursContainer.scrollTo(flavoursContainer.scrollLeft + 1, 0);
-        }
-      }, 15);
-    });
-  },
+  mounted() {},
 };
 </script>
 
-<style scoped>
-.container {
-  width: 300px;
-  overflow-x: scroll;
-  white-space: nowrap;
-  background-color: #fff;
-}
-</style>
+<style scoped></style>
