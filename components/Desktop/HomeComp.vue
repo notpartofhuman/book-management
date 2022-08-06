@@ -230,6 +230,9 @@ export default {
 .btnhover {
   background-color: #ff4500;
   color: #f6faf8;
+  border-style: solid;
+  border-color: #ff4500;
+  border-width: 1px;
 }
 .btnhover:hover {
   background-color: #f6faf8;

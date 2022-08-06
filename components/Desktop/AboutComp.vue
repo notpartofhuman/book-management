@@ -1,8 +1,8 @@
 <template>
   <div style="background-color: #f6faf8">
-    <div class="relative pt-28 backpics">
+    <div class="relative pt-24 backpics">
       <p
-        class="font-bold text-5xl pt-8 ml-10 mt-4 text-center"
+        class="font-bold text-4xl ml-12 mt-1 text-center"
         style="color: #27211e"
       >
         About Us
@@ -10,10 +10,10 @@
       <center style="color: #6a645d">
         <SolidHomeIcon class="h-5 inline-flex" /> &nbsp;> About Us
       </center>
-      <div class="pt-32 pb-2"></div>
+      <div class="pt-20 pb-2"></div>
     </div>
 
-    <div class="grid grid-cols-4 flex-col my-20" style="color: #27211e">
+    <div class="grid grid-cols-4 flex-col my-14" style="color: #27211e">
       <div class="text-3xl font-bold ml-16 my-auto">
         <img class="w-full" src="~/assets/resources/story.png" />
       </div>
@@ -38,13 +38,12 @@
           arcu pharetra suscipit. Nunc facilisis a enim at ultrices. Cras ligula
           mauris, volutpat et fringilla in, auctor eget mi. Donec accumsan
           dignissim nulla. Fusce lacinia, risus ac semper rutrum, dolor turpis
-          vehicula dolor, et dignissim magna nunc a ipsum. Integer convallis in
-          odio sed condimentum. Curabitur ut ullamcorper dui.
+          vehicula dolor, et dignissim magna nunc a ipsum.
         </p>
       </div>
     </div>
 
-    <div class="rounded-lg overflow-hidden mb-3 my-28">
+    <div class="rounded-lg overflow-hidden mb-3 my-20">
       <img class="w-96 mx-auto" src="~/assets/resources/we.png" />
       <!-- <p class="font-semibold text-center text-lg">Meet Our Awesome Team</p> -->
 
@@ -247,9 +246,9 @@
 
 <style scoped>
 .backpics {
-  background-image: url("~/assets/resources/bg.jpg");
+  background-image: url("~/assets/resources/bg.png");
   /* object-fit: cover; */
-  /* background-repeat: no-repeat; */
+  background-repeat: no-repeat;
   /* width: 100vw; */
 }
 .story {

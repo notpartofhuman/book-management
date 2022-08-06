@@ -54,8 +54,8 @@ export default {
 
     function scrollFunction() {
       if (
-        document.body.scrollTop > 50 ||
-        document.documentElement.scrollTop > 50
+        document.body.scrollTop > 10 ||
+        document.documentElement.scrollTop > 10
       ) {
         document.getElementById("changeabout").style.background = "#F6FAF8";
         document.getElementById("changeabout").style.boxShadow =

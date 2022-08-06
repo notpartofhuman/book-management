@@ -1,5 +1,17 @@
 <template>
-  <div>
+  <div style="background-color: #f6faf8">
+    <div class="relative pt-24 backpicbook">
+      <p
+        class="font-bold text-4xl ml-12 mt-1 text-center"
+        style="color: #27211e"
+      >
+        All Books
+      </p>
+      <center style="color: #6a645d">
+        <SolidHomeIcon class="h-5 inline-flex" /> &nbsp;> Books
+      </center>
+      <div class="pt-32 pb-2"></div>
+    </div>
     <div class="grid grid-cols-5 px-3 pt-5">
       <div
         v-for="(book, index) in books"
@@ -53,3 +65,10 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.backpicbook {
+  background-image: url("~/assets/resources/bgbook.png");
+  background-repeat: no-repeat;
+}
+</style>
