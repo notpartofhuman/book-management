@@ -1,6 +1,6 @@
 # book-management
 
-Demo [here](https://spontaneous-hamster-015788.netlify.app/" target="_blank)
+Demo [here](https://spontaneous-hamster-015788.netlify.app/)
 
 ## Build Setup
 
