@@ -1,6 +1,6 @@
 <template>
   <div style="background-color: #f6faf8">
-    <div class="relative pt-28 backpic">
+    <div class="pt-28 backpic">
       <p
         class="font-bold text-5xl pt-16 ml-10 mt-20 text-left"
         style="color: #27211e"
@@ -216,6 +216,12 @@ export default {
 }
 .backpic {
   background-image: url("~/assets/resources/bgpsd.png");
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center;
 }
 .chevron {
   color: orangered;

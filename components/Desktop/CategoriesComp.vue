@@ -1,6 +1,6 @@
 <template>
   <div style="background-color: #f6faf8">
-    <div class="relative pt-24 backpiccategory">
+    <div class="pt-24 backpiccategory">
       <p
         class="font-bold text-4xl ml-12 mt-1 text-center"
         style="color: #27211e"
@@ -112,5 +112,10 @@ export default {
 .backpiccategory {
   background-image: url("~/assets/resources/bgctg.png");
   background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center;
 }
 </style>

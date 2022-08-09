@@ -1,6 +1,6 @@
 <template>
   <div style="background-color: #f6faf8">
-    <div class="relative pt-24 backpics">
+    <div class="pt-24 backpics">
       <p
         class="font-bold text-4xl ml-12 mt-1 text-center"
         style="color: #27211e"
@@ -247,9 +247,12 @@
 <style scoped>
 .backpics {
   background-image: url("~/assets/resources/bg.png");
-  /* object-fit: cover; */
   background-repeat: no-repeat;
-  /* width: 100vw; */
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center;
 }
 .story {
   background-image: url("~/assets/resources/leaffalls.png");
