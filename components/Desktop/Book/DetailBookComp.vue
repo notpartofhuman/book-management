@@ -4,10 +4,13 @@
     class="flex lg:overflow-hidden xs:flex-col lg:flex-row"
   >
     <!-- Content -->
-    <div v-if="book != null" class="grid grid-cols-3">
+    <div
+      v-if="book != null"
+      class="grid grid-cols-3 mb-10 lg:overflow-hidden xs:flex-col lg:flex-row"
+    >
       <div class="relative">
         <!-- Cover Book -->
-        <div class="fixed h-full w-full object-cover">
+        <div class="h-full w-full object-cover">
           <img
             :src="backendStorageHosts.bookManagement.books + book.cover"
             class="h-full"
@@ -15,7 +18,7 @@
         </div>
       </div>
 
-      <div class="col-span-2 mr-5 mt-5">
+      <div class="mx-5 mt-5 col-span-2">
         <!-- Title, Author, and Price -->
         <div
           class="py-3 px-3.5 rounded-lg shadow-lg"
@@ -70,17 +73,44 @@
             {{ setRupiah(book.price).replace("..00", "") }}
           </div>
         </div>
-        <div>
+
+        <div class="mt-8 font-semibold" style="font-size: 18px; color: #27211e">
+          Recommendation
+          <hr />
+          <div class="grid grid-cols-5 px-3 pt-5">
+            <div v-for="(top4s, index) in top4s" :key="index">
+              <!-- Book Card -->
+              <book-card-helper :book="top4s" :index="index" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="mt-12 px-12 pt-6 font-semibold gridset"
+        style="font-size: 18px; color: #27211e"
+      >
+        Category Suggestions
+        <hr />
+        <div class="grid grid-cols-4 pt-5">
           <div
-            class="mt-8 font-semibold"
-            style="font-size: 18px; color: #27211e"
+            v-for="(categori, index) in categories"
+            :key="index"
+            @click="goCategoriesDetail(categori.slug)"
+            class="relative mx-2"
+            :class="index % 4 == 0 ? 'mr-1.5' : 'ml-1.5'"
           >
-            Recommendation
-            <hr />
-            <div class="grid grid-cols-5 px-3 pt-5">
-              <div v-for="(top4s, index) in top4s" :key="index">
-                <!-- Book Card -->
-                <book-card-helper :book="top4s" :index="index" />
+            <img
+              class="w-full rounded-md"
+              :src="
+                backendStorageHosts.bookManagement.categories + categori.image
+              "
+            />
+            <div class="absolute top-0 left-3" style="color: #f6faf8">
+              <div class="mt-3 mb-3 flex flex-col text-sm">
+                <h1 class="text-lg font-bold">
+                  {{ toTitleCase(categori.name) }}
+                </h1>
               </div>
             </div>
           </div>
@@ -106,14 +136,30 @@ export default {
       bookSlug: this.$route.params.slug,
       backendStorageHosts: backendStorageHosts,
       book: null,
+      categories: [],
+      page: 1,
     };
   },
 
   created() {
-    this.getBookDetail(), this.getTop4s();
+    this.getBookDetail(), this.getCategories(), this.getTop4s();
   },
 
   methods: {
+    getCategories() {
+      this.$bookManagementApi.get("v1/categories/random/4").then((resp) => {
+        this.categories = resp.data.data;
+        console.log(this.categories);
+      });
+    },
+    goCategoriesDetail(category_slug) {
+      this.$router.push({
+        name: "category-slug",
+        params: {
+          slug: category_slug,
+        },
+      });
+    },
     getBookDetail() {
       this.$bookManagementApi
         .get("v1/books/slug/" + this.bookSlug)
@@ -148,3 +194,12 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.gridset {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 2;
+}
+</style>
