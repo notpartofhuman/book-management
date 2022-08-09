@@ -24,7 +24,7 @@
 
     <!-- Pop Up Menu -->
     <div
-      class="fixed top-0 left-0 w-64 bg-white min-h-screen z-50 gradientsidebar"
+      class="fixed top-0 left-0 w-72 min-h-screen z-50 gradientsidebar"
       v-if="isShowMenu == true"
     >
       <!-- Judul -->
@@ -38,16 +38,17 @@
           <OutlineXIcon class="w-7" />
         </div>
       </div>
+      <hr style="color: #ff4500; border: 2px solid" />
       <ul class="list-none">
-        <li class="my-4">
+        <li class="my-6">
           <NuxtLink to="/Books" class="mx-5 anav" id="books"> Books </NuxtLink>
         </li>
-        <li class="my-4">
+        <li class="my-6">
           <NuxtLink to="/Categories" class="mx-5 anav" id="categories">
             Categories
           </NuxtLink>
         </li>
-        <li class="my-4">
+        <li class="my-6">
           <NuxtLink to="" class="mx-5 anav" id="about"> About Us </NuxtLink>
         </li>
       </ul>

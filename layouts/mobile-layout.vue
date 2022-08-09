@@ -2,7 +2,7 @@
   <div class="font-poppins">
     <!-- Navigation Bar -->
     <navbar-mobile id="navbar-mobile" />
-    <div id="body-apps" style="padding-top: 55px">
+    <div id="body-apps">
       <nuxt keep-alive />
     </div>
   </div>
