@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="pt-14">
     <div
       class="relative overflow-hidden rounded-lg m-3"
       v-if="category != null"
@@ -43,7 +43,7 @@
         </div>
       </div>
       <infinite-loading @distance="1" @infinite="getCategoryDetail">
-        <div spinner="waveDots"></div>
+        <div spinner="waveDots" slot="no-more"></div>
       </infinite-loading>
     </div>
   </div>

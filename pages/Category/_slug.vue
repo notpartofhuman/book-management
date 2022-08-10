@@ -32,6 +32,21 @@
         <!-- Content -->
         <DesktopCategoryDetailCategoryComp />
       </div>
+
+      <div v-else-if="$device.isMobileOrTablet">
+        <!-- Navigation Bar -->
+        <div
+          class="fixed top-0 left-0 w-full flex items-center py-3 px-3 shadow-md"
+          style="z-index: 1000; background-color: #f6faf8; color: #27211e"
+        >
+          <div class="flex items-center font-bold" @click="$router.go(-1)">
+            <SolidChevronLeftIcon class="w-8 mr-1.5 text-blue-lochmara" />
+            Category Detail
+          </div>
+        </div>
+        <!-- Content -->
+        <MobileCategoryDetailCategoryComp />
+      </div>
     </client-only>
   </div>
 </template>

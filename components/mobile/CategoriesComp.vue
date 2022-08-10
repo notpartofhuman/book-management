@@ -1,5 +1,18 @@
 <template>
-  <div>
+  <div style="background-color: #f6faf8">
+    <div class="pt-10 backpiccategory">
+      <p
+        class="font-bold text-2xl ml-12 mt-1 text-center"
+        style="color: #27211e"
+      >
+        All Categories
+      </p>
+      <center style="color: #6a645d">
+        <SolidHomeIcon class="h-5 inline-flex" /> &nbsp;> Categories
+      </center>
+      <div class="pt-10 pb-2"></div>
+    </div>
+
     <div class="grid grid-cols-2 px-3 pt-3">
       <div
         v-for="(categori, index) in categories"
@@ -9,9 +22,8 @@
         :class="index % 2 == 0 ? 'mr-1.5' : 'ml-1.5'"
       >
         <img
-          class="w-full"
+          class="w-full rounded-md"
           :src="backendStorageHosts.bookManagement.categories + categori.image"
-          style="height: 275px"
         />
         <!-- Overlay Categori Name -->
         <div
@@ -37,7 +49,7 @@
       </div>
     </div>
     <infinite-loading @distance="1" @infinite="getCategories">
-      <div spinner="waveDots"></div>
+      <div spinner="waveDots" slot="no-more"></div>
     </infinite-loading>
   </div>
 </template>
@@ -91,5 +103,18 @@ export default {
       });
     },
   },
+  mounted() {},
 };
 </script>
+
+<style scoped>
+.backpiccategory {
+  background-image: url("~/assets/resources/bgctg.png");
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center;
+}
+</style>

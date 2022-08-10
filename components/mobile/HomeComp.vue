@@ -43,7 +43,7 @@
       <p class="font-bold text-3xl mb-8" style="color: #27211e">
         Try Our Best Seller
       </p>
-      <div class="grid grid-cols-2 fex-cols px-10">
+      <div class="grid grid-cols-2 flex-cols px-10">
         <div v-for="(top4, index) in top4s" :key="index">
           <!-- Book Card -->
           <book-card-helper :book="top4" :index="index" />
@@ -53,7 +53,7 @@
 
     <div class="relative mx-10">
       <p
-        class="font-bold text-3xl text-center my-10 pt-10"
+        class="font-bold text-2xl text-center my-10 pt-10"
         style="color: #27211e"
       >
         Welcome To <br />Autumn Athenaeum
@@ -66,19 +66,19 @@
         lorem, porttitor in ipsum quis, hendrerit luctus lacus. Sed ipsum enim,
         eleifend eu rhoncus sit amet, fermentum ac felis.
       </p>
-      <p class="ml-2 my-1 mt-3 inline-flex items-center" style="color: #6a645d">
+      <p class="ml-2 my-1 mt-3 inline-flex" style="color: #6a645d">
         <OutlineCheckIcon class="h-8" style="color: orangered" /> Lorem ipsum
         dolor sit amet, consectetur adipiscing elit
       </p>
-      <p class="ml-2 my-1 inline-flex items-center" style="color: #6a645d">
+      <p class="ml-2 my-1 inline-flex" style="color: #6a645d">
         <OutlineCheckIcon class="h-8" style="color: orangered" /> Lorem ipsum
         dolor sit amet, consectetur adipiscing elit
       </p>
-      <p class="ml-2 my-1 inline-flex items-center" style="color: #6a645d">
+      <p class="ml-2 my-1 inline-flex" style="color: #6a645d">
         <OutlineCheckIcon class="h-8" style="color: orangered" /> Lorem ipsum
         dolor sit amet, consectetur adipiscing elit
       </p>
-      <p class="ml-2 my-1 inline-flex items-center" style="color: #6a645d">
+      <p class="ml-2 my-1 inline-flex" style="color: #6a645d">
         <OutlineCheckIcon class="h-8" style="color: orangered" /> Lorem ipsum
         dolor sit amet, consectetur adipiscing elit
       </p>
@@ -102,7 +102,7 @@
       <!-- style="color: #372923" -->
       <div class="grid flex-col mt-20" style="color: #27211e">
         <div class="pt-12 relative col-span-3 px-10">
-          <p class="font-bold text-3xl mb-5">Autumn Athenaeum</p>
+          <p class="font-bold text-2xl mb-5 text-center">Autumn Athenaeum</p>
           <p class="max-w-xl text-justify leading-7">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et
             cursus justo, id dignissim enim. Cras lacinia viverra odio, a auctor

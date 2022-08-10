@@ -1,30 +1,34 @@
 <template>
   <div
     @click="goDetailBook(book.slug)"
-    class="bg-white rounded-lg overflow-hidden mb-3"
+    class="rounded-lg overflow-hidden mb-3 shadow-md gradientbookcard"
     :class="index % 2 == 0 ? 'mr-1.5' : 'ml-1.5'"
   >
-    <div class="bg-dark">
-      <div style="position: relative; width: 100%; padding-top: 100%">
-        <div
-          class="flex justify-center items-center"
-          style="position: absolute; top: 0; left: 0; bottom: 0; right: 0"
-        >
-          <img
-            :src="backendStorageHosts.bookManagement.books + book.cover"
-            style="max-height: 100%; max-width: 100%"
-          />
-        </div>
+    <div class="relative px-4 w-full">
+      <div class="flex justify-center items-center">
+        <img
+          :src="backendStorageHosts.bookManagement.books + book.cover"
+          style="max-height: 100%"
+        />
       </div>
     </div>
-    <div class="px-3.5 py-2">
+    <div class="px-1 py-1 mb-4">
       <p
-        class="mb-2 text-multiline-ellipsis"
-        style="font-size: 13px; line-height: 1.4; height: 38px"
+        class="mb-2 mt-1 truncate"
+        style="
+          font-size: 13px;
+          line-height: 1.4;
+          height: 20px;
+          text-align: center;
+          color: #27211e;
+        "
       >
         {{ book.title }}
       </p>
-      <div class="font-bold" style="font-size: 15px">
+      <div
+        class="font-bold"
+        style="font-size: 15px; text-align: center; color: #ff4500"
+      >
         <span style="font-size: 13px">IDR</span>
         {{ setRupiah(book.price).replace("..00", "") }}
       </div>
@@ -71,12 +75,11 @@ export default {
 </script>
 
 <style scoped>
-.text-multiline-ellipsis {
-  text-overflow: ellipsis;
-  overflow: hidden;
-  display: -webkit-box !important;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  white-space: normal;
+.gradientbookcard {
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 69, 0, 0),
+    rgba(255, 69, 0, 0.2)
+  );
 }
 </style>
