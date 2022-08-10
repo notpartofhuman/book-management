@@ -38,7 +38,7 @@
           <OutlineXIcon class="w-7" />
         </div>
       </div>
-      <hr style="border: 2px solid orangered" />
+      <hr style="border-top: 2px solid orangered" />
       <ul class="list-none">
         <li class="my-6">
           <NuxtLink to="/Books" class="mx-5" id="books"> Books </NuxtLink>
