@@ -2,7 +2,7 @@
   <div>
     <client-only>
       <MobileHomeComp v-if="$device.isMobileOrTablet" />
-      <DesktopHomeComp v-else />
+      <DesktopHomeComp v-else-if="$device.isDesktop" />
     </client-only>
   </div>
 </template>
