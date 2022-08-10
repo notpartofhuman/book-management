@@ -1,7 +1,7 @@
 <template>
   <div>
     <client-only>
-      <div style="background: #f6f6f6">
+      <div style="background: #f6faf8">
         <div v-if="$device.isMobileOrTablet" style="padding-top: 55px">
           <!-- Navigation Bar -->
           <div

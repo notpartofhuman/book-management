@@ -2,7 +2,7 @@
   <div>
     <!-- Navigation Bar -->
     <div
-      class="fixed top-0 left-0 w-full flex items-center py-3 px-3"
+      class="fixed top-0 left-0 w-full flex items-center py-3 px-3 z-50"
       id="change"
       style="color: orangered"
     >

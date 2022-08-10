@@ -3,7 +3,7 @@
     <main>
       <!-- Navigation Bar -->
       <div
-        class="fixed top-0 left-0 w-full flex items-center py-3 px-3 shadow-lg"
+        class="fixed top-0 left-0 w-full flex items-center py-3 px-3 shadow-lg z-50"
         style="color: #27211e; background-color: #f6faf8"
       >
         <!-- Buttom show menu -->
@@ -41,15 +41,15 @@
       <hr style="color: #ff4500; border: 2px solid" />
       <ul class="list-none">
         <li class="my-6">
-          <NuxtLink to="/Books" class="mx-5 anav" id="books"> Books </NuxtLink>
+          <NuxtLink to="/Books" class="mx-5" id="books"> Books </NuxtLink>
         </li>
         <li class="my-6">
-          <NuxtLink to="/Categories" class="mx-5 anav" id="categories">
+          <NuxtLink to="/Categories" class="mx-5" id="categories">
             Categories
           </NuxtLink>
         </li>
         <li class="my-6">
-          <NuxtLink to="" class="mx-5 anav" id="about"> About Us </NuxtLink>
+          <NuxtLink to="" class="mx-5" id="about"> About Us </NuxtLink>
         </li>
       </ul>
     </div>
