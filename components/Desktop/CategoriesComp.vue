@@ -2,7 +2,7 @@
   <div style="background-color: #f6faf8">
     <div class="pt-24 backpiccategory">
       <p
-        class="font-bold text-4xl ml-12 mt-1 text-center"
+        class="font-bold text-4xl mx-auto mt-1 text-center"
         style="color: #27211e"
       >
         All Categories

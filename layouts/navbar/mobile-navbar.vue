@@ -49,7 +49,7 @@
           </NuxtLink>
         </li>
         <li class="my-6">
-          <NuxtLink to="" class="mx-5" id="about"> About Us </NuxtLink>
+          <NuxtLink to="/about" class="mx-5" id="about"> About Us </NuxtLink>
         </li>
       </ul>
     </div>

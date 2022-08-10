@@ -90,7 +90,7 @@
 </template>
 
 <script>
-import { backendStorageHosts } from "../../../app.config";
+import { backendStorageHosts } from "~/app.config";
 import InfiniteLoading from "vue-infinite-loading";
 import BookCardHelper from "../helper/BookCardHelper.vue";
 

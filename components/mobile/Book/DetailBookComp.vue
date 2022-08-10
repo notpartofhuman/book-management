@@ -13,52 +13,70 @@
     <!-- Content -->
     <div v-if="book != null" style="padding-bottom: 77px">
       <!-- Cover Book -->
-      <div class="bg-dark">
-        <div style="position: relative; width: 100%; padding-top: 100%">
-          <div
-            class="flex justify-center items-center"
-            style="position: absolute; top: 0; left: 0; bottom: 0; right: 0"
-          >
-            <img
-              :src="backendStorageHosts.bookManagement.books + book.cover"
-              style="max-height: 100%; max-width: 100%"
-            />
-          </div>
+
+      <div style="position: relative; width: 100%; padding-top: 100%">
+        <div
+          class="flex justify-center items-center"
+          style="position: absolute; top: 0; left: 0; bottom: 0; right: 0"
+        >
+          <img
+            :src="backendStorageHosts.bookManagement.books + book.cover"
+            style="max-height: 100%; max-width: 100%"
+          />
         </div>
       </div>
       <!-- Title, Author, and Price -->
-      <div class="bg-white py-3 px-3.5">
-        <div class="font-bold" style="font-size: 17px">
-          {{ toTitleCase(book.title) }}
+      <div
+        class="py-3 px-3.5 rounded-xl shadow-lg"
+        style="background-color: #f6faf8"
+      >
+        <div class="py-3 px-3.5">
+          <div class="font-bold" style="font-size: 17px">
+            {{ toTitleCase(book.title) }}
+          </div>
+          <div class="text-grey-600" style="font-size: 15px">
+            by {{ book.author }}
+          </div>
         </div>
-        <div class="text-grey-600 mb-4" style="font-size: 15px">
-          by {{ book.author }}
-        </div>
-        <div class="font-bold" style="font-size: 20px">
-          Rp. {{ setRupiah(book.price).replace("..00", "") }}
+        <!-- Product Detail -->
+        <div class="py-3 px-3.5" style="color: #27211e">
+          <div class="mb-3 font-bold">Product Detail</div>
+          <!-- Publisher, Stock, Weight -->
+          <div class="mb-3" style="font-size: 14px; color: #27211e">
+            <div class="flex mb-1">
+              <div class="w-1/5">Publisher</div>
+              <div class="w-4/5 pl-4">: {{ book.publisher }}</div>
+            </div>
+            <div class="flex mb-1" style="font-size: 14px">
+              <div class="w-1/5">Stock</div>
+              <div class="w-4/5 pl-4">: {{ book.stock }}</div>
+            </div>
+            <div class="flex mb-1" style="font-size: 14px">
+              <div class="w-1/5">Status</div>
+              <div class="w-4/5 pl-4">: {{ toTitleCase(book.status) }}</div>
+            </div>
+            <div class="flex mb-1" style="font-size: 14px">
+              <div class="w-1/5">Weight</div>
+              <div class="w-4/5 pl-4">: {{ book.weight }} kg</div>
+            </div>
+          </div>
+          <!-- Description -->
+          <div class="text-justify" style="font-size: 14px">
+            &nbsp;&nbsp;&nbsp;&nbsp;{{ book.description }}
+          </div>
         </div>
       </div>
-      <!-- Product Detail -->
-      <div class="mt-3 bg-white py-3 px-3.5">
-        <div class="mb-3 font-bold">Product Detail</div>
-        <!-- Publisher, Stock, Weight -->
-        <div class="mb-3" style="font-size: 14px">
-          <div class="flex mb-1">
-            <div class="text-grey-600 w-1/5">Publisher</div>
-            <div class="w-4/5 pl-4">{{ book.publisher }}</div>
-          </div>
-          <div class="flex mb-1" style="font-size: 14px">
-            <div class="text-grey-600 w-1/5">Stock</div>
-            <div class="w-4/5 pl-4">{{ book.stock }}</div>
-          </div>
-          <div class="flex mb-1" style="font-size: 14px">
-            <div class="text-grey-600 w-1/5">Weight</div>
-            <div class="w-4/5 pl-4">{{ book.weight }} kg</div>
-          </div>
-        </div>
-        <!-- Description -->
-        <div class="text-justify" style="font-size: 14px">
-          {{ book.description }}
+      <!-- Button to Cart -->
+      <div
+        class="w-full p-3 fixed bottom-0 left-0 z-50"
+        style="background-color: #ff4500"
+      >
+        <div
+          class="flex items-center justify-center py-2 px-auto"
+          style="color: #f6faf8"
+        >
+          <SolidShoppingCartIcon class="w-6 mr-3" /> Rp.
+          {{ setRupiah(book.price).replace("..00", "") }}
         </div>
       </div>
 
@@ -76,7 +94,7 @@
       </div>
 
       <div
-        class="mt-10 mb-5 font-semibold"
+        class="mt-10 mb- font-semibold"
         style="font-size: 18px; color: #27211e"
       >
         &nbsp;&nbsp;Category Suggestions
@@ -105,19 +123,6 @@
             </div>
           </div>
         </div>
-      </div>
-    </div>
-
-    <!-- Button to Cart -->
-    <div
-      class="w-full p-3 fixed bottom-0 left-0"
-      style="background-color: #ff4500"
-    >
-      <div
-        class="flex items-center justify-center py-2 pr-7 fontbold rounded-lg"
-        style="color: #f6faf8"
-      >
-        <SolidShoppingCartIcon class="w-6 mr-3" /> Cart
       </div>
     </div>
   </div>
