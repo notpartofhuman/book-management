@@ -46,54 +46,54 @@
     <!-- <p class="font-semibold text-center text-lg">Meet Our Awesome Team</p> -->
 
     <!-- style="background-color: " -->
-    <div class="grid flex-row mt-5">
-      <div class="grid grid-cols-2 mx-4 my-4">
-        <div class="w-4/5 ml-auto">
+    <div class="grid flex-row mt-4">
+      <div class="grid grid-cols-2 mx-4 mt-4">
+        <div class="w-4/5 mx-auto">
           <img src="~/assets/resources/p3.png" />
+          <p class="font-bold text-center" style="color: #ff4500">
+            Daniel Anderson
+          </p>
+          <p class="text-center text-sm" style="color: #27211e">CEO/Founder</p>
         </div>
-        <div class="flex-cols my-auto" style="color: #ff4500">
-          <p class="font-bold" style="color: #ff4500">Daniel Anderson</p>
-          <p class="font-semibold" style="color: #27211e">CEO/Founder</p>
-        </div>
-      </div>
 
-      <div class="grid grid-cols-2 flex-col mx-4 my-4">
-        <div class="flex-cols my-auto text-right">
-          <p class="font-bold" style="color: #ff4500">Vivian Taylor</p>
-          <p class="font-semibold" style="color: #27211e">Bookstore Manager</p>
-        </div>
-        <div class="w-4/5">
+        <div class="w-4/5 mx-auto">
           <img src="~/assets/resources/p2.png" />
+          <p class="font-bold text-center" style="color: #ff4500">
+            Vivian Taylor
+          </p>
+          <p class="text-center text-sm" style="color: #27211e">
+            Bookstore Manager
+          </p>
         </div>
       </div>
 
-      <div class="grid grid-cols-2 mx-4 my-4">
-        <div class="w-4/5 ml-auto">
-          <img src="~/assets/resources/p1.png" />
-        </div>
-        <div class="flex-cols my-auto" style="color: #ff4500">
-          <p class="font-bold" style="color: #ff4500">Albert Brightwell</p>
-          <p class="font-semibold" style="color: #27211e">Legal Manager</p>
-        </div>
+      <div class="w-5/12 mx-auto my-6">
+        <img src="~/assets/resources/p1.png" />
+        <p class="font-bold text-center" style="color: #ff4500">
+          Albert Brightwell
+        </p>
+        <p class="text-center text-sm" style="color: #27211e">Legal Manager</p>
       </div>
 
-      <div class="grid grid-cols-2 flex-col mx-4 my-4">
-        <div class="flex-cols my-auto text-right">
-          <p class="font-bold" style="color: #ff4500">Joe Davidson</p>
-          <p class="font-semibold" style="color: #27211e">Web Developer</p>
-        </div>
-        <div class="w-4/5">
+      <div class="grid grid-cols-2 mx-4 mb-4">
+        <div class="w-4/5 mx-auto">
           <img src="~/assets/resources/p4.png" />
+          <p class="font-bold text-center" style="color: #ff4500">
+            Joe Davidson
+          </p>
+          <p class="text-center text-sm" style="color: #27211e">
+            Web Developer
+          </p>
         </div>
-      </div>
 
-      <div class="grid grid-cols-2 mx-4 my-4">
-        <div class="w-4/5 ml-auto">
+        <div class="w-4/5 mx-auto">
           <img src="~/assets/resources/p5.png" />
-        </div>
-        <div class="flex-cols my-auto" style="color: #ff4500">
-          <p class="font-bold" style="color: #ff4500">Alisa Richardson</p>
-          <p class="font-semibold" style="color: #27211e">UI/UX Designer</p>
+          <p class="font-bold text-center" style="color: #ff4500">
+            Alisa Richardson
+          </p>
+          <p class="text-center text-sm" style="color: #27211e">
+            UI/UX Designer
+          </p>
         </div>
       </div>
     </div>

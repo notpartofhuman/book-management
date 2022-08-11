@@ -119,15 +119,13 @@
           <!-- <img class="w-2/5 float-right mr-16" src="~/assets/resources/favicon.png" /> -->
           <p class="font-bold text-xl mb-5">Quick Links</p>
           <div class="mb-2.5">
-            <NuxtLink to="/DesktopBooks" class="ahover">Books</NuxtLink>
+            <NuxtLink to="/Books" class="ahover">Books</NuxtLink>
           </div>
           <div class="mb-2.5">
-            <NuxtLink to="/DesktopCategories" class="ahover"
-              >Categories</NuxtLink
-            >
+            <NuxtLink to="/Categories" class="ahover">Categories</NuxtLink>
           </div>
           <div class="mb-2.5">
-            <NuxtLink to="/DesktopAbout" class="ahover">About Us</NuxtLink>
+            <NuxtLink to="/About" class="ahover">About Us</NuxtLink>
           </div>
           <div class="mb-2.5">
             <NuxtLink to="#" class="ahover">Terms & Condition</NuxtLink>
