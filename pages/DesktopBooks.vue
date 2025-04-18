@@ -7,7 +7,7 @@
           <div
             class="fixed top-0 left-0 w-full flex items-center py-3 px-3"
             id="changebook"
-            style="color: orangered; z-index: 1000"
+            style="color: #cd9b7b; z-index: 1000"
           >
             <!-- Buttom show menu -->
             <!-- <div class="px-1 mr-2" @click="showMenu()"> -->
@@ -16,25 +16,26 @@
 
             <!-- Logo -->
             <NuxtLink to="/">
-              <div class="inline-flex">
-                <img class="w-10" src="/favicon.png" />
-                <div class="ml-2 font-semibold text-2xl" style="color: #ff4500">
-                  Autumn Athenaeum
-                </div>
+              <div class="ml-2 font-semibold text-2xl" style="color: #300057">
+                Asalon
               </div>
             </NuxtLink>
 
             <!-- Menu -->
             <div class="ml-auto pr-1 inline-flex items-center">
-              <NuxtLink to="/DesktopAbout" class="mx-5"> About Us </NuxtLink>
-              <NuxtLink to="/DesktopCategories" class="mx-5">
-                Categories
+              <NuxtLink to="/DesktopAbout" class="mx-5 anav"> Klinik </NuxtLink>
+              <NuxtLink to="/DesktopCategories" class="mx-5 anav">
+                Skincare
               </NuxtLink>
-              <NuxtLink to="/DesktopBooks" class="mx-5">
-                Books
-                <hr
-              /></NuxtLink>
-              <SolidUserCircleIcon class="w-10 ml-5" />
+              <NuxtLink
+                to="/DesktopBooks"
+                class="mx-5 font-bold"
+                style="color: #300057"
+              >
+                Salon
+                <hr />
+              </NuxtLink>
+              <!-- <SolidUserCircleIcon class="w-10 ml-5" /> -->
             </div>
           </div>
           <!-- Content -->
@@ -54,17 +55,17 @@ export default {
 
     function scrollFunction() {
       if (
-        document.body.scrollTop > 10 ||
-        document.documentElement.scrollTop > 10
+        document.body.scrollTop > 50 ||
+        document.documentElement.scrollTop > 50
       ) {
         document.getElementById("changebook").style.background = "#F6FAF8";
         document.getElementById("changebook").style.boxShadow =
           "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)";
-        document.getElementById("changebook").style.color = "#27211e";
+        document.getElementById("change").style.color = "#27211e";
       } else {
         document.getElementById("changebook").style.background = "transparent";
         document.getElementById("changebook").style.boxShadow = "none";
-        document.getElementById("changebook").style.color = "orangered";
+        document.getElementById("changebook").style.color = "#cd9b7b";
       }
     }
   },
@@ -77,9 +78,9 @@ export default {
   transition: 0.4s; /* Add a transition effect (when scrolling - and font size is decreased) */
 }
 a.nuxt-link-exact-active {
-  color: #ff4500;
+  color: #cd9b7b;
 }
-a:hover {
-  color: #ff4500;
+.anav:hover {
+  color: #300057;
 }
 </style>

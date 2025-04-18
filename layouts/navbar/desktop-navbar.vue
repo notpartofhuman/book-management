@@ -4,7 +4,7 @@
     <div
       class="fixed top-0 left-0 w-full flex items-center py-3 px-3 z-50"
       id="change"
-      style="color: orangered"
+      style="color: #65377f"
     >
       <!-- Buttom show menu -->
       <!-- <div class="px-1 mr-2" @click="showMenu()"> -->
@@ -15,22 +15,22 @@
       <NuxtLink to="/">
         <div class="inline-flex">
           <img class="w-10" src="/favicon.png" />
-          <div class="ml-2 font-semibold text-2xl">Autumn Athenaeum</div>
+          <div class="ml-2 font-semibold text-2xl">Klinik Gasanda</div>
         </div>
       </NuxtLink>
 
       <!-- Menu -->
       <div class="ml-auto pr-1 inline-flex items-center">
         <NuxtLink to="/DesktopAbout" class="mx-5 anav" id="about">
-          About Us
+          Klinik
         </NuxtLink>
         <NuxtLink to="/DesktopCategories" class="mx-5 anav" id="categories">
-          Categories
+          Skincare
         </NuxtLink>
         <NuxtLink to="/DesktopBooks" class="mx-5 anav" id="books">
-          Books
+          Salon
         </NuxtLink>
-        <SolidUserCircleIcon class="w-10 ml-5" />
+        <!-- <SolidUserCircleIcon class="w-10 ml-5" /> -->
       </div>
     </div>
 
@@ -85,7 +85,7 @@ export default {
       } else {
         document.getElementById("change").style.background = "transparent";
         document.getElementById("change").style.boxShadow = "none";
-        document.getElementById("change").style.color = "orangered";
+        document.getElementById("change").style.color = "#65377f";
       }
     }
   },
@@ -98,9 +98,9 @@ export default {
   transition: 0.4s; /* Add a transition effect (when scrolling - and font size is decreased) */
 }
 a.nuxt-link-exact-active {
-  color: #ff4500;
+  color: #65377f;
 }
 .anav:hover {
-  color: #ff4500;
+  color: #0a8643;
 }
 </style>

@@ -1,9 +1,9 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: "Autumn Athenaeum",
+    title: "Klinik Gasanda",
     htmlAttrs: {
-      lang: "en",
+      lang: "id",
     },
     meta: [
       { charset: "utf-8" },
